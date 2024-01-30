@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('statut_matrimonials', function (Blueprint $table) {
             $table->id();
+            $table->string('libelle')->unique();
             $table->timestamps();
         });
     }

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('mois', function (Blueprint $table) {
             $table->id();
+            $table->string('libelle')->unique();
             $table->timestamps();
         });
     }

@@ -13,6 +13,8 @@ return new class extends Migration
     {
         Schema::create('projets', function (Blueprint $table) {
             $table->id();
+            $table->string('libelle')->unique();
+            $table->string('code_mago')->unique();
             $table->timestamps();
         });
     }
