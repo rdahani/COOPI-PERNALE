@@ -24,5 +24,12 @@ Route::prefix('configuration')->name('configuration.')->group(function (){
     Route::post('/annee/edit/{annee}', [\App\Http\Controllers\Settings\AnneeController::class, 'edit'])->name('annee.edit-form');
     Route::delete('/annee/edit/{annee}', [\App\Http\Controllers\Settings\AnneeController::class, 'delete'])->name('annee.delete');
 
+    Route::get('/banque', [\App\Http\Controllers\Settings\AnneeController::class, 'index'])->name('banque');
+    Route::get('/banque/add', [\App\Http\Controllers\Settings\AnneeController::class, 'addForm'])->name('banque.add-form');
+    Route::post('/banque/add', [\App\Http\Controllers\Settings\AnneeController::class, 'add'])->name('banque.add-form');
+    Route::get('/banque/edit/{banque}', [\App\Http\Controllers\Settings\AnneeController::class, 'editForm'])->name('banque.edit-form');
+    Route::post('/banque/edit/{banque}', [\App\Http\Controllers\Settings\AnneeController::class, 'edit'])->name('banque.edit-form');
+    Route::delete('/banque/edit/{banque}', [\App\Http\Controllers\Settings\AnneeController::class, 'delete'])->name('banque.delete');
+
 
 });

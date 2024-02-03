@@ -51,15 +51,15 @@
                 <span>
                   <i class="ti ti-article"></i>
                 </span>
-                            <span class="hide-menu">Années</span>
+                            <span class="hide-menu">Année</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
-                        <a class="sidebar-link" href="./ui-alerts.html" aria-expanded="false">
+                        <a class="sidebar-link" href="{{ route('configuration.banque') }}" aria-expanded="false">
                 <span>
                   <i class="ti ti-alert-circle"></i>
                 </span>
-                            <span class="hide-menu">Alerts</span>
+                            <span class="hide-menu">Banques</span>
                         </a>
                     </li>
                     <li class="sidebar-item">
