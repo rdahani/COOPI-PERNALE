@@ -10,60 +10,60 @@ class StatutmatrimonialController extends Controller
 {
     public function index()
     {
-        $statutmatrimonial = Statut_matrimonial::all();
-        return view('Settings.Statut_Type_dossier.index', compact('statutmatrimonial'));
+        $statutmatrimonials = Statut_matrimonial::all();
+        return view('Settings.Statut_matrimonial.index', compact('statutmatrimonials'));
     }
     public function addform(){
-        $typedossier = new Type_dossier();
-        return view('Settings.Type_dossier.form' , compact('typedossier'));
+        $statutmatrimonial = new Statut_matrimonial();
+        return view('Settings.Statut_matrimonial.form' , compact('statutmatrimonial'));
     }
-    public function editForm(Type_dossier $typedossier)
+    public function editForm(Statut_matrimonial $statutmatrimonial)
     {
-        return view('Settings.Type_dossier.form', compact('typedossier'));
+        return view('Settings.Statut_matrimonial.form', compact('statutmatrimonial'));
     }
 
-    public function add (TypedossierRequest $request)
+    public function add (StatutmatrimonialRequest $request)
     {
-        $query = Type_dossier::create($request->all());
+        $query = Statut_matrimonial::create($request->all());
 
         if ($query){
             return redirect()
-                ->route('configuration.typedossier')
+                ->route('configuration.statutmatrimonial')
                 ->with('notification', ['type' => 'success', 'message' => 'La ressource à été crée avec succès']);
         }else{
             return redirect()
-                ->route('configuration.typedossier')
+                ->route('configuration.statutmatrimonial')
                 ->with('notification', ['type' => 'error', 'message' => 'Erreur']);
         }
     }
 
-    public function edit (TypedossierRequest $request, Type_dossier $typedossier)
+    public function edit (StatutmatrimonialRequest $request, Statut_matrimonial $typedossier)
     {
         $validated = $request->validated();
         $query = $typedossier->update($request->all());
 
         if ($query){
             return redirect()
-                ->route('configuration.typedossier')
+                ->route('configuration.statutmatrimonial')
                 ->with('notification', ['type' => 'success', 'message' => 'La ressource à été modifié avec succès']);
         }else{
             return redirect()
-                ->route('configuration.typedossier')
+                ->route('configuration.statutmatrimonial')
                 ->with('notification', ['type' => 'error', 'message' => 'Erreur']);
         }
     }
-    public function delete (Type_dossier $typedossier)
+    public function delete (Statut_matrimonial $typedossier)
     {
 
         $query = $typedossier->delete();
 
         if ($query){
             return redirect()
-                ->route('configuration.typedossier')
+                ->route('configuration.statutmatrimonial')
                 ->with('notification', ['type' => 'success', 'message' => 'La ressource à été supprimé avec succès']);
         }else{
             return redirect()
-                ->route('configuration.typedossier')
+                ->route('configuration.statutmatrimonial')
                 ->with('notification', ['type' => 'error', 'message' => 'Erreur']);
         }
     }

@@ -79,6 +79,14 @@
                         </a>
                     </li>
                     <li class="sidebar-item">
+                        <a class="sidebar-link" href="{{ route('configuration.statutmatrimonial') }}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-alert-circle"></i>
+                </span>
+                            <span class="hide-menu">Statut Matrimonial</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item">
                         <a class="sidebar-link" href="./ui-card.html" aria-expanded="false">
                 <span>
                   <i class="ti ti-cards"></i>

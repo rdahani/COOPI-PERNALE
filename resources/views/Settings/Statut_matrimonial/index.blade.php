@@ -3,7 +3,7 @@
 @section('body')
 
     <div class="d-flex justify-content-between">
-        <h3 class="mb-9">Type de dossier</h3>
+        <h3 class="mb-9">Statut Matrimonial</h3>
         <p>
             <a href="{{ route('configuration.statutmatrimonial.add-form') }}" class="btn btn-primary">Nouveau <i class="ti ti-plus"></i></a>
         </p>
@@ -14,7 +14,7 @@
             <thead>
             <tr>
                 <th>#</th>
-                <th>Type de Dossier</th>
+                <th>Statut <Matrimonial></Matrimonial></th>
                 <th>Actions</th>
             </tr>
             </thead>

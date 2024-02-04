@@ -45,6 +45,13 @@ Route::prefix('configuration')->name('configuration.')->group(function (){
     Route::post('/typedossier/edit/{typedossier}', [\App\Http\Controllers\Settings\TypedossierController::class, 'edit'])->name('typedossier.edit-form');
     Route::delete('/typedossier/edit/{typedossier}', [\App\Http\Controllers\Settings\TypedossierController::class, 'delete'])->name('typedossier.delete');
 
+    Route::get('/statutmatrimonial', [\App\Http\Controllers\Settings\StatutmatrimonialController::class, 'index'])->name('statutmatrimonial');
+    Route::get('/statutmatrimonial/add', [\App\Http\Controllers\Settings\StatutmatrimonialController::class, 'addForm'])->name('statutmatrimonial.add-form');
+    Route::post('/statutmatrimonial/add', [\App\Http\Controllers\Settings\StatutmatrimonialController::class, 'add'])->name('statutmatrimonial.add-form');
+    Route::get('/statutmatrimonial/edit/{statutmatrimonial}', [\App\Http\Controllers\Settings\StatutmatrimonialController::class, 'editForm'])->name('statutmatrimonial.edit-form');
+    Route::post('/statutmatrimonial/edit/{statutmatrimonial}', [\App\Http\Controllers\Settings\StatutmatrimonialController::class, 'edit'])->name('statutmatrimonial.edit-form');
+    Route::delete('/statutmatrimonial/edit/{statutmatrimonial}', [\App\Http\Controllers\Settings\StatutmatrimonialController::class, 'delete'])->name('statutmatrimonial.delete');
+
 
 });
 
