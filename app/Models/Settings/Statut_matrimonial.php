@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Statut_matrimonial extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'libelle'
+    ];
 }

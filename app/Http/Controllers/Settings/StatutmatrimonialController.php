@@ -2,68 +2,68 @@
 
 namespace App\Http\Controllers\Settings;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\BanqueRequest;
-use App\Models\Settings\Banque;
+use App\Http\Requests\StatutmatrimonialRequest;
+use App\Models\Settings\Statut_matrimonial;
 use Illuminate\Http\Request;
 
-class BanqueController extends Controller
+class StatutmatrimonialController extends Controller
 {
     public function index()
     {
-        $banques = Banque::all();
-        return view('Settings.Banque.index', compact('banques'));
+        $statutmatrimonial = Statut_matrimonial::all();
+        return view('Settings.Statut_Type_dossier.index', compact('statutmatrimonial'));
     }
     public function addform(){
-        $banque = new Banque();
-        return view('Settings.Banque.form' , compact('banque'));
+        $typedossier = new Type_dossier();
+        return view('Settings.Type_dossier.form' , compact('typedossier'));
     }
-    public function editForm(Banque $banque)
+    public function editForm(Type_dossier $typedossier)
     {
-        return view('Settings.Banque.form', compact('banque'));
+        return view('Settings.Type_dossier.form', compact('typedossier'));
     }
 
-    public function add (BanqueRequest $request)
+    public function add (TypedossierRequest $request)
     {
-        $query = Banque::create($request->all());
+        $query = Type_dossier::create($request->all());
 
         if ($query){
             return redirect()
-                ->route('configuration.banque')
+                ->route('configuration.typedossier')
                 ->with('notification', ['type' => 'success', 'message' => 'La ressource à été crée avec succès']);
         }else{
             return redirect()
-                ->route('configuration.banque')
+                ->route('configuration.typedossier')
                 ->with('notification', ['type' => 'error', 'message' => 'Erreur']);
         }
     }
 
-    public function edit (BanqueRequest $request, Banque $banque)
+    public function edit (TypedossierRequest $request, Type_dossier $typedossier)
     {
         $validated = $request->validated();
-        $query = $banque->update($request->all());
+        $query = $typedossier->update($request->all());
 
         if ($query){
             return redirect()
-                ->route('configuration.banque')
+                ->route('configuration.typedossier')
                 ->with('notification', ['type' => 'success', 'message' => 'La ressource à été modifié avec succès']);
         }else{
             return redirect()
-                ->route('configuration.banque')
+                ->route('configuration.typedossier')
                 ->with('notification', ['type' => 'error', 'message' => 'Erreur']);
         }
     }
-    public function delete (Banque $banque)
+    public function delete (Type_dossier $typedossier)
     {
 
-        $query = $banque->delete();
+        $query = $typedossier->delete();
 
         if ($query){
             return redirect()
-                ->route('configuration.banque')
+                ->route('configuration.typedossier')
                 ->with('notification', ['type' => 'success', 'message' => 'La ressource à été supprimé avec succès']);
         }else{
             return redirect()
-                ->route('configuration.banque')
+                ->route('configuration.typedossier')
                 ->with('notification', ['type' => 'error', 'message' => 'Erreur']);
         }
     }

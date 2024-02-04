@@ -2,68 +2,68 @@
 
 namespace App\Http\Controllers\Settings;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\BanqueRequest;
-use App\Models\Settings\Banque;
+use App\Http\Requests\BaseRequest;
+use App\Models\Settings\Base;
 use Illuminate\Http\Request;
 
-class BanqueController extends Controller
+class BaseController extends Controller
 {
     public function index()
     {
-        $banques = Banque::all();
-        return view('Settings.Banque.index', compact('banques'));
+        $bases = Base::all();
+        return view('Settings.Base.index', compact('bases'));
     }
     public function addform(){
-        $banque = new Banque();
-        return view('Settings.Banque.form' , compact('banque'));
+        $base = new Base();
+        return view('Settings.Base.form' , compact('base'));
     }
-    public function editForm(Banque $banque)
+    public function editForm(Base $base)
     {
-        return view('Settings.Banque.form', compact('banque'));
+        return view('Settings.Base.form', compact('base'));
     }
 
-    public function add (BanqueRequest $request)
+    public function add (BaseRequest $request)
     {
-        $query = Banque::create($request->all());
+        $query = Base::create($request->all());
 
         if ($query){
             return redirect()
-                ->route('configuration.banque')
+                ->route('configuration.base')
                 ->with('notification', ['type' => 'success', 'message' => 'La ressource à été crée avec succès']);
         }else{
             return redirect()
-                ->route('configuration.banque')
+                ->route('configuration.base')
                 ->with('notification', ['type' => 'error', 'message' => 'Erreur']);
         }
     }
 
-    public function edit (BanqueRequest $request, Banque $banque)
+    public function edit (BaseRequest $request, Base $base)
     {
         $validated = $request->validated();
-        $query = $banque->update($request->all());
+        $query = $base->update($request->all());
 
         if ($query){
             return redirect()
-                ->route('configuration.banque')
+                ->route('configuration.base')
                 ->with('notification', ['type' => 'success', 'message' => 'La ressource à été modifié avec succès']);
         }else{
             return redirect()
-                ->route('configuration.banque')
+                ->route('configuration.base')
                 ->with('notification', ['type' => 'error', 'message' => 'Erreur']);
         }
     }
-    public function delete (Banque $banque)
+    public function delete (Base $base)
     {
 
-        $query = $banque->delete();
+        $query = $base->delete();
 
         if ($query){
             return redirect()
-                ->route('configuration.banque')
+                ->route('configuration.base')
                 ->with('notification', ['type' => 'success', 'message' => 'La ressource à été supprimé avec succès']);
         }else{
             return redirect()
-                ->route('configuration.banque')
+                ->route('configuration.base')
                 ->with('notification', ['type' => 'error', 'message' => 'Erreur']);
         }
     }
