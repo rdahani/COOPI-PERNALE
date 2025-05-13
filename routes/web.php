@@ -52,7 +52,41 @@ Route::prefix('configuration')->name('configuration.')->group(function (){
     Route::post('/statutmatrimonial/edit/{statutmatrimonial}', [\App\Http\Controllers\Settings\StatutmatrimonialController::class, 'edit'])->name('statutmatrimonial.edit-form');
     Route::delete('/statutmatrimonial/edit/{statutmatrimonial}', [\App\Http\Controllers\Settings\StatutmatrimonialController::class, 'delete'])->name('statutmatrimonial.delete');
 
+    Route::get('/fonction', [\App\Http\Controllers\Settings\FonctionController::class, 'index'])->name('fonction');
+    Route::get('/fonction/add', [\App\Http\Controllers\Settings\FonctionController::class, 'addForm'])->name('fonction.add-form');
+    Route::post('/fonction/add', [\App\Http\Controllers\Settings\FonctionController::class, 'add'])->name('fonction.add-form');
+    Route::get('/fonction/edit/{fonction}', [\App\Http\Controllers\Settings\FonctionController::class, 'editForm'])->name('fonction.edit-form');
+    Route::post('/fonction/edit/{fonction}', [\App\Http\Controllers\Settings\FonctionController::class, 'edit'])->name('fonction.edit-form');
+    Route::delete('/fonction/edit/{fonction}', [\App\Http\Controllers\Settings\FonctionController::class, 'delete'])->name('fonction.delete');
+    
+    Route::get('/sexe', [\App\Http\Controllers\Settings\SexeController::class, 'index'])->name('sexe');
+    Route::get('/sexe/add', [\App\Http\Controllers\Settings\SexeController::class, 'addForm'])->name('sexe.add-form');
+    Route::post('/sexe/add', [\App\Http\Controllers\Settings\SexeController::class, 'add'])->name('sexe.add-form');
+    Route::get('/sexe/edit/{sexe}', [\App\Http\Controllers\Settings\SexeController::class, 'editForm'])->name('sexe.edit-form');
+    Route::post('/sexe/edit/{sexe}', [\App\Http\Controllers\Settings\SexeController::class, 'edit'])->name('sexe.edit-form');
+    Route::delete('/sexe/edit/{sexe}', [\App\Http\Controllers\Settings\SexeController::class, 'delete'])->name('sexe.delete');
+
+    Route::get('/sexe', [\App\Http\Controllers\Settings\SexeController::class, 'index'])->name('sexe');
+    Route::get('/sexe/add', [\App\Http\Controllers\Settings\SexeController::class, 'addForm'])->name('sexe.add-form');
+    Route::post('/sexe/add', [\App\Http\Controllers\Settings\SexeController::class, 'add'])->name('sexe.add-form');
+    Route::get('/sexe/edit/{sexe}', [\App\Http\Controllers\Settings\SexeController::class, 'editForm'])->name('sexe.edit-form');
+    Route::post('/sexe/edit/{sexe}', [\App\Http\Controllers\Settings\SexeController::class, 'edit'])->name('sexe.edit-form');
+    Route::delete('/sexe/edit/{sexe}', [\App\Http\Controllers\Settings\SexeController::class, 'delete'])->name('sexe.delete');
+
+    Route::get('/type_fonction', [\App\Http\Controllers\Settings\Type_fonctionController::class, 'index'])->name('type_fonction');
+    Route::get('/type_fonction/add', [\App\Http\Controllers\Settings\Type_fonctionController::class, 'addForm'])->name('type_fonction.add-form');
+    Route::post('/type_fonction/add', [\App\Http\Controllers\Settings\Type_fonctionController::class, 'add'])->name('type_fonction.add-form');
+    Route::get('/type_fonction/edit/{type_fonction}', [\App\Http\Controllers\Settings\Type_fonctionController::class, 'editForm'])->name('type_fonction.edit-form');
+    Route::post('/type_fonction/edit/{type_fonction}', [\App\Http\Controllers\Settings\Type_fonctionController::class, 'edit'])->name('type_fonction.edit-form');
+    Route::delete('/type_fonction/edit/{type_fonction}', [\App\Http\Controllers\Settings\Type_fonctionController::class, 'delete'])->name('type_fonction.delete');
+   
+    Route::get('/type_contrat', [\App\Http\Controllers\Settings\Type_contratController::class, 'index'])->name('type_contrat');
+    Route::get('/type_contrat/add', [\App\Http\Controllers\Settings\Type_contratController::class, 'addForm'])->name('type_contrat.add-form');
+    Route::post('/type_contrat/add', [\App\Http\Controllers\Settings\Type_contratController::class, 'add'])->name('type_contrat.add-form');
+    Route::get('/type_contrat/edit/{type_contrat}', [\App\Http\Controllers\Settings\Type_contratController::class, 'editForm'])->name('type_contrat.edit-form');
+    Route::post('/type_contrat/edit/{type_contrat}', [\App\Http\Controllers\Settings\Type_contratController::class, 'edit'])->name('type_contrat.edit-form');
+    Route::delete('/type_contrat/edit/{type_contrat}', [\App\Http\Controllers\Settings\Type_contratController::class, 'delete'])->name('type_contrat.delete');
+
 
 });
-
 
